@@ -29,6 +29,9 @@ not running on the Mac:
 - The webview uses a **non-persistent data store**, so a page cached by an older
   build can never be served after an update, and every launch loads a unique URL.
 - ⌘R reloads.
+- **Voice notes:** the composer's mic button records and the transcript lands in the message box.
+  macOS asks for microphone access on first use; if you dismissed it, enable the app under
+  System Settings → Privacy & Security → Microphone.
 - If the server does not answer, or the page loads but renders nothing, a native
   dialog appears with the address, a reason, and Retry / Change server / Quit.
   A blank window is never the failure mode.
