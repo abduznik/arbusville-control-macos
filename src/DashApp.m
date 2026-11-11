@@ -10,7 +10,7 @@
 
 - (NSString *)savedURL {
     NSString *u = [[NSUserDefaults standardUserDefaults] stringForKey:@"server"];
-    if (u.length == 0) u = @"http://100.119.139.93:8770";
+    if (u.length == 0) u = @"https://dash.arbusville.duckdns.org";
     return u;
 }
 
