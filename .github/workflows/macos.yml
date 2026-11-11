@@ -37,6 +37,10 @@ jobs:
           codesign --force --deep --sign - "$APP"
           lipo -info "$APP/Contents/MacOS/ArbusvilleControl"
 
+          echo "== plist checks =="
+          plutil -p "$APP/Contents/Info.plist" | grep -E "NSAllowsArbitraryLoads|NSMicrophoneUsageDescription|CFBundleShortVersionString" || true
+          plutil -lint "$APP/Contents/Info.plist"
+
           hdiutil create -volname "Arbusville Control" -srcfolder "$APP" \
             -ov -format UDZO "dist/ArbusvilleControl-macos.dmg"
           shasum -a 256 dist/*.dmg
